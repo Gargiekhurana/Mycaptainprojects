@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+
+bool check(int x)
+{
+    if (x <= 0  || x == 1 )
+    {
+        return false;
+    }
+    else
+    {
+        for (int i = 2; i < x; i++)
+        {
+            while (x%i==0)
+            {
+                return false;
+            }
+        }
+    }
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter number: "<<endl:
+    cin>>n;
+    
+    for (int i = 2; i < n/2; i++)
+    {
+        if (check(i) != false)
+        {
+            if (check(n-i) != false)
+            {
+            cout<<n<<" = "<<n-i<<" + "<<i<<endl;
+            }
+        }
+    }
+    return 0;
+}
