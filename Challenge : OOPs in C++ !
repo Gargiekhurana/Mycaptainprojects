@@ -1,0 +1,47 @@
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+class watch
+{
+    private:
+    int hh;
+    int mm;
+    int ss;
+    public:
+    watch(int a, int b, int c)
+    {
+        hh = a;
+        mm = b;
+        ss = c;
+    }
+    void show()
+    {
+        cout << "The time is = " << setw(2) << setfill('0') << hh << ":";
+
+        cout<< setw(2) << setfill('0') << mm << ":";
+
+        cout<< setw(2) << setfill('0') << ss << endl;
+
+    }
+    void seconds()
+    {
+        cout<<"Total seconds is: "<<hh*3600+mm*60+ss;
+    }
+};
+
+int main()
+{
+    int h,m,s;
+    cout<<"Enter Hours:"<<endl;
+    cin>>h;
+    cout<<"Enter minutes:"<<endl;
+    cin>>m;
+    cout<<"Enter seconds:"<<endl;
+    cin>>s;
+    watch samay(h,m,s); 
+    samay.show();
+    samay.seconds();
+    return 0;
+}
